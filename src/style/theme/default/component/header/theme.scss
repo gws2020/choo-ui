@@ -1,0 +1,21 @@
+@import '../../public.scss';
+
+.#{$name}-#{$theme}-header {
+  height: 44px;
+  > * {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  ul > li {
+    width: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .#{$name}-header-content {
+    margin: 0 5px;
+  }
+}

@@ -1,0 +1,25 @@
+@import '../../public.scss';
+@import './theme.scss';
+
+.#{$name}-page {
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  > .#{$name}-page-header {
+  }
+  > .#{$name}-page-main {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    position: relative !important;
+    > .#{$name}-page-content {
+      flex: 1 !important;
+      position: relative !important;
+    }
+    > .#{$name}-page-footer {}
+  }
+}

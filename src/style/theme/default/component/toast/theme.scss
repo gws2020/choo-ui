@@ -1,0 +1,19 @@
+@import '../../public.scss';
+
+.#{$name}-#{$theme}-toast {
+  &.#{$name}-#{$theme}-toast-animate-enter-active, &.#{$name}-#{$theme}-toast-animate-leave-active {
+    transition: opacity .3s;
+    > .#{$name}-#{$theme}-tips {
+      transition: transform .3s;
+    }
+  }
+  &.#{$name}-#{$theme}-toast-animate-enter, &.#{$name}-#{$theme}-toast-animate-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+    &.#{$name}-#{$theme}-toast-animate-enter > .#{$name}-#{$theme}-tips {
+      transform: translateY(10px);
+    }
+    &.#{$name}-#{$theme}-toast-animate-leave-to > .#{$name}-#{$theme}-tips {
+      transform: translateY(-10px);
+    }
+  }
+}
