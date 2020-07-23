@@ -7,6 +7,7 @@ import methods from './methods'
 export interface InitOptions {
   router: VueRouter
   theme: ChooTheme
+  method?: any
 }
 
 class ChooUI implements PluginObject<InitOptions> {
@@ -33,13 +34,24 @@ class ChooUI implements PluginObject<InitOptions> {
     vue: typeof Vue,
     options?: InitOptions
   ): void => {
+
+    if (!options) {
+      throw(new Error('router 为必要参数'))
+    }
+
+    const router: VueRouter = options!.router
+
+    if (!router) {
+      throw(new Error('router 为必要参数'))
+    }
+    if (!(router instanceof VueRouter)) {
+      throw(new Error('router 必须为 VueRouter 实例'))
+    }
+    this.router = options!.router
+
     if (options && options.theme) {
       this.theme.checked = options.theme.checked || 'default'
       Object.assign(this.theme.map, options.theme.map || {})
-    }
-
-    if (options && options.router) {
-      this.router = options.router
     }
 
     Object.defineProperty(vue.prototype, '$choo', {
