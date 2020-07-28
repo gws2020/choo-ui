@@ -9,19 +9,20 @@
 import { Component, Prop } from 'vue-property-decorator'
 import ChooUiMixins from '../../mixins'
 
-@Component
+@Component({
+  props: {
+    size: {
+      default: 14
+    },
+    code: {},
+    type: {
+      default: 'chooui'
+    }
+  }
+})
 export default class Icon extends ChooUiMixins {
-  @Prop({
-    default: 'chooui'
-  })
   public type!: string
-
-  @Prop()
   public code!: string
-
-  @Prop({
-    default: 14
-  })
   public size!: number
 
   public name: string = 'icon'

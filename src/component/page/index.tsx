@@ -45,6 +45,7 @@ export default class Page extends ChooUiMixins {
   public static isShowHeader: boolean = true
 
   public name: string = 'page'
+  public test: string = 'bbb'
 
   public get isRootPage(): boolean {
     return this.getParentComponent(this)
@@ -66,8 +67,14 @@ export default class Page extends ChooUiMixins {
       )
 
     const Content = isRootPage ?
-      <main>{ $slots.default }</main> :
-      <section>{ $slots.default }</section>
+      <main class={`${frameName}-page-content`}>
+        { $slots.default }
+        { $slots.content }
+      </main> :
+      <section class={`${frameName}-page-content`}>
+        { $slots.default }
+        { $slots.content }
+      </section>
 
     const Footer = $slots.footer &&
       (
@@ -81,10 +88,7 @@ export default class Page extends ChooUiMixins {
         { Page.isShowHeader && Header }
         { $slots.page }
         <section class={`${frameName}-page-main`}>
-          <section class={`${frameName}-page-content`}>
-            { Content }
-            { $slots.content }
-          </section>
+          { Content }
           { Footer }
           { $slots.main }
         </section>

@@ -4,6 +4,7 @@
 .#{$name}-header {
   display: flex !important;
   .#{$name}-header-content {
+    overflow: hidden;
     flex: 1 !important;
   }
 }

@@ -76,7 +76,16 @@ interface BtnMap {
 
 type unWatch = (() => void)
 
-@Component
+@Component({
+  props: {
+    back: {
+      default: true
+    },
+    spaceEquality: {
+      default: false
+    }
+  }
+})
 export default class Header extends ChooUiMixins {
 
   public static defaultBack: HeaderBtn = {
@@ -90,14 +99,7 @@ export default class Header extends ChooUiMixins {
 
   public name: string = 'header'
   public $parent!: Page
-  @Prop({
-    default: true
-  })
   public back!: boolean
-
-  @Prop({
-    default: false
-  })
   public spaceEquality!: boolean
 
   private btnMap: BtnMap = {

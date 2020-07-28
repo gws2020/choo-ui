@@ -65,11 +65,14 @@ class ChooUI implements PluginObject<InitOptions> {
 
     Object.keys(Component).forEach((componentName: string) => {
       const components: typeof Vue = Component[componentName]
+      componentName = componentName.replace(/([A-Z])/g, '-$1').toLowerCase();
       vue.component(`${this.name}-${componentName}`, components)
     })
   }
 }
 
 const example: ChooUI = new ChooUI()
+
+export const component = Component
 
 export default example

@@ -4,10 +4,15 @@
 @import './component/header';
 @import './component/tips';
 @import './component/toast';
+@import './component/scroll-view';
 
 body, p, ul {
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: "微软雅黑","Microsoft Yahei","宋体",Tahoma,'Simsun',Arial,Helvetica,sans-serif;
 }
 
 li {

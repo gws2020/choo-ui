@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import chooUI from '../src'
 import chooRouter from 'choo-router'
-// import '../lib/index.css'
+import '../lib/index.css'
 
 Vue.config.productionTip = false
 
@@ -14,12 +14,12 @@ Vue.use(chooRouter, {
 
 Vue.use(chooUI, {
   router,
-  // theme: {
-  //   checked: 'yilu',
-  //   map: {
-  //     yilu: 'assets/theme/yilu'
-  //   }
-  // }
+  theme: {
+    checked: 'default',
+    map: {
+      yilu: 'assets/theme/yilu'
+    }
+  }
 })
 
 new Vue({

@@ -1,0 +1,16 @@
+@import '../../public.scss';
+
+.#{$name}-scroll-view {
+  height: 100%;
+  overflow: hidden;
+  .#{$name}-scroll-view-content {
+    position: relative;
+    .#{$name}-scroll-view-pull-down {
+      position: absolute;
+      bottom: 100%;
+      &.Execute {
+        position: static;
+      }
+    }
+  }
+}

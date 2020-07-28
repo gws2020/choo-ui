@@ -20,7 +20,7 @@ export default abstract class ChooUiComponentMixins extends Vue {
     immediate: true,
     deep: true
   })
-  private ChooUiOption (newOpt: VueChooUI): void {
+  private ChooUiOption (newOpt: VueChooUI, oldOpt: VueChooUI): void {
     const { name, theme: { checked, map } } = newOpt
     this.frameName = name
     this.frameTheme = map![checked] !== undefined ? checked : 'default'
